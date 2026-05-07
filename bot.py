@@ -16,11 +16,11 @@ ADMIN_IDS = [884626807, 607939625, 716267755]
 ROULETTE_WIN_CHANCE = 5 / 6
 COOLDOWN_SECONDS = 30
 
-# ССЫЛКИ НА КАРТИНКИ (твои, очищенные):
-IMG_START = "https://sun9-39.userapi.com/s/v1/ig2/0mNYdxv3UKOI_GIP0ulGo-bsm9Zd2bI_Dag&quot;
-IMG_BALANCE = "https://sun9-60.userapi.com/s/v1/ig2/WLpnqkYSrEANY1EYKSh-dpBdLPm94WeCgKBFoc2eq7jo6sgVWvGt0N4HJkGWnakcv1QUBQW4pWr9fETgp-xwmpJs.jpg&quot;
-IMG_WIN = "https://sun9-49.userapi.com/s/v1/ig2/8mmIPnFUDW2eHu-Eg3UCYJoZL102gS-TNAyxfxjFlumy1sUVg4kmEQgPiu8-rMEA7FaLvngSOyxkol9VlAUH3_bO.jpg&quot;
-IMG_LOSE = "https://sun9-40.userapi.com/s/v1/ig2/OzPVuhqYzDJXmMQ7yMihdVuS7MqD8rxqDcx0Vzm3ZXSFHHUuMkeA0QvT1kS9KkNnq2qCo9IqcaZnfHZ7GH314kv9.jpg&quot;
+# ССЫЛКИ НА КАРТИНКИ (исправлены кавычки)
+IMG_START = "https://sun9-39.userapi.com/s/v1/ig2/0mNYdxv3UKOI_GIP0ulGo-bsm9Zd2bI_Dag"
+IMG_BALANCE = "https://sun9-60.userapi.com/s/v1/ig2/WLpnqkYSrEANY1EYKSh-dpBdLPm94WeCgKBFoc2eq7jo6sgVWvGt0N4HJkGWnakcv1QUBQW4pWr9fETgp-xwmpJs.jpg"
+IMG_WIN = "https://sun9-49.userapi.com/s/v1/ig2/8mmIPnFUDW2eHu-Eg3UCYJoZL102gS-TNAyxfxjFlumy1sUVg4kmEQgPiu8-rMEA7FaLvngSOyxkol9VlAUH3_bO.jpg"
+IMG_LOSE = "https://sun9-40.userapi.com/s/v1/ig2/OzPVuhqYzDJXmMQ7yMihdVuS7MqD8rxqDcx0Vzm3ZXSFHHUuMkeA0QvT1kS9KkNnq2qCo9IqcaZnfHZ7GH314kv9.jpg"
 # =================================
 
 bot = Bot(token=TOKEN)
@@ -88,7 +88,7 @@ async def start_handler(message: Message):
         "Твой стартовый баланс: **100 Пламени**.\n\n"
         "📌 **Команды:**\n"
         "`!баланс` — проверить Пламя\n"
-        "`!рулетка <ставка>` — сыграть (шанс 5/6)\n\n"
+        "`!рулетка <ставка>` — сыграть (шанс выигрыша 5/6)\n\n"
         "🎲 **Пример:** `!рулетка 25`",
         attachment=IMG_START
     )
@@ -120,10 +120,10 @@ async def roulette_handler(message: Message):
         await message.answer("❌ Ставка должна быть больше 0")
         return
     if bet > current_flame:
-        await message.answer(f"❌ У
+        await message.a
 
 
-тебя только {current_flame} Пламени. Не хватает.")
+nswer(f"❌ У тебя только {current_flame} Пламени. Не хватает.")
         return
     if not can_bet(user_id):
         await message.answer(f"⏳ Подожди {COOLDOWN_SECONDS} секунд до следующей ставки.")
