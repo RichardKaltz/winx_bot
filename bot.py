@@ -16,7 +16,7 @@ ADMIN_IDS = [884626807, 607939625, 716267755]
 ROULETTE_WIN_CHANCE = 5 / 6
 COOLDOWN_SECONDS = 30
 
-# ССЫЛКИ НА КАРТИНКИ (исправлены кавычки)
+# ССЫЛКИ НА КАРТИНКИ
 IMG_START = "https://sun9-39.userapi.com/s/v1/ig2/0mNYdxv3UKOI_GIP0ulGo-bsm9Zd2bI_Dag"
 IMG_BALANCE = "https://sun9-60.userapi.com/s/v1/ig2/WLpnqkYSrEANY1EYKSh-dpBdLPm94WeCgKBFoc2eq7jo6sgVWvGt0N4HJkGWnakcv1QUBQW4pWr9fETgp-xwmpJs.jpg"
 IMG_WIN = "https://sun9-49.userapi.com/s/v1/ig2/8mmIPnFUDW2eHu-Eg3UCYJoZL102gS-TNAyxfxjFlumy1sUVg4kmEQgPiu8-rMEA7FaLvngSOyxkol9VlAUH3_bO.jpg"
@@ -120,10 +120,7 @@ async def roulette_handler(message: Message):
         await message.answer("❌ Ставка должна быть больше 0")
         return
     if bet > current_flame:
-        await message.a
-
-
-nswer(f"❌ У тебя только {current_flame} Пламени. Не хватает.")
+        await message.answer(f"❌ У тебя только {current_flame} Пламени. Не хватает.")
         return
     if not can_bet(user_id):
         await message.answer(f"⏳ Подожди {COOLDOWN_SECONDS} секунд до следующей ставки.")
